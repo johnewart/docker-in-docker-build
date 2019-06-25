@@ -1,0 +1,14 @@
+dependencies:
+  build:
+    - go:1.12.1
+
+build_targets:
+  - name: docker_image
+    commands:
+      - docker build . -f Dockerfile.ubuntu -t yb_ubuntu
+
+ci:
+  builds:
+    - name: docker
+      build_target: docker_image
+
