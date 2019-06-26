@@ -5,6 +5,8 @@ dependencies:
 build_targets:
   - name: docker_image
     commands:
+      - curl -fsSL https://get.docker.com -o get-docker.sh
+      - sh get-docker.sh
       - docker build . -f Dockerfile.ubuntu -t yb_ubuntu
 
 ci:
